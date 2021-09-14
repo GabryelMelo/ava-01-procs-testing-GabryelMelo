@@ -1,7 +1,14 @@
 class Matematica {
   // IMPLEMENTE!
   public static int resto(int dividendo, int divisor) {
-    return 0;
+
+    int resp = dividendo;
+
+    while (resp > divisor) {
+      resp -= divisor;
+    }
+
+    return resp;
   }
 
 }
