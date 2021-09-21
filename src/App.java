@@ -46,5 +46,45 @@ class App {
     System.out.println(Texto.pad("***IFRS", 10, '*').equals("***IFRS***"));
     System.out.println(Texto.pad("logica", -3, '#').equals("logica"));
     System.out.println(Texto.pad("ABC", 5, '+').length() == 5);
+
+    // Excel\\
+    String column = "AB";
+
+    // prints (perceba a necessidade de criar uma classe Excel)
+    System.out.println(Excel.columnNumber(column)); // 28
+
+    // assertivas
+    System.out.println(Excel.columnNumber(column) == 28); // true
+    System.out.println(Excel.columnNumber("A") == 1); // true
+    System.out.println(Excel.columnNumber("C") == 3); // true
+    System.out.println(Excel.columnNumber("Z") == 26); // true
+    System.out.println(Excel.columnNumber("ZY") == 701); // true
+    System.out.println(Excel.columnNumber("TADS") == 352319); // true
+    // adicione mais 3 casos de teste
+    System.out.println(Excel.columnNumber("IFRS") == 162727); // true
+    System.out.println(Excel.columnNumber("POO") == 11221); // true
+    System.out.println(Excel.columnNumber("JAVA") == 177009); // true
+
+    //Cifra de Cesar\\
+    String frase = "DEF";
+    int girar = 3;
+    //String resultado = String.valueOf(fraseAtt);
+
+    // print
+    System.out.println(Cifra.cifraCesar(frase, girar)); // ABC
+
+    // assertivas
+    System.out.println(Cifra.cifraCesar("VQREQFGT", 2).equals("TOPCODER")); // true
+    System.out.println(Cifra.cifraCesar("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 10).equals("QRSTUVWXYZABCDEFGHIJKLMNOP")); // true
+    System.out.println(Cifra.cifraCesar("TOPCODER", 0).equals("TOPCODER")); // true
+    System.out.println(Cifra.cifraCesar("ZWBGLZ", 25).equals("AXCHMA")); // true
+    System.out.println(Cifra.cifraCesar("DBNPCBQ", 1).equals("CAMOBAP")); // true
+    System.out.println(Cifra.cifraCesar("LIPPSASVPH", 4).equals("HELLOWORLD")); // true
+    // adicione mais 3 casos de teste
+    System.out.println(Cifra.cifraCesar("QNZA", 60).equals("IFRS")); // true
+    System.out.println(Cifra.cifraCesar("YFIX", 31).equals("TADS")); // true
+    System.out.println(Cifra.cifraCesar("DFCQSRWASBHCGSHSGHOUSA", 14).equals("PROCEDIMENTOSETESTAGEM")); // true
+    System.out.println(Cifra.cifraCesar("DAMN", -5).equals("IFRS")); // true
+
   }
 }
